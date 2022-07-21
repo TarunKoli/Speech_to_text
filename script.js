@@ -23,7 +23,6 @@ recognition.onresult = function (event) {
 };
 
 talk.addEventListener("click", () => {
-  recognition.abort();
   recognition.start();
 });
 
