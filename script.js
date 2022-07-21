@@ -6,9 +6,6 @@ const SpeechRecognition =
 
 const recognition = new SpeechRecognition();
 
-recognition.continuous = true;
-recognition.interimResults = true;
-
 recognition.onstart = function () {
   talk.classList.add("active");
 };
