@@ -82,6 +82,6 @@ function voices() {
   }
 }
 
-voices();
+// voices();
 
 synth.addEventListener("voiceschanged", voices);
