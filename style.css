@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right,#4568DC,#B06AB3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text_speech{
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    width: 370px;
+}
+.text_speech h1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 28px;
+}
+form{
+    margin: 35px 0 20px;
+}
+.input,.voice{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+form :where(textarea, select, button){
+    outline: none;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+form label{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.input textarea{
+    resize: none;
+    border: 1px solid #999;
+    height: 110px;
+    font-size: 15px;
+    padding: 8px 10px;
+}
+.outer{
+    height: 47px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+.outer select{
+    font-size: 14px;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.btns button{
+    height: 52px;
+    font-size: 17px;
+    color: #fff;
+    background: #4568DC;
+    cursor: pointer;
+}
+.btns button:nth-child(1){
+    flex-basis: 80%;
+}
+.btns button:nth-child(2){
+    flex-basis: 17%;
+}
+.talk{
+    position: relative;
+}
+.talk.active::before{
+    content: '';
+    position: absolute;
+    inset: 0 0 0 1px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    animation: animate 0.5s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: scale(0,0);
+        background: rgba(255,255,255,0.5);
+    }
+    100%{
+        transform: scale(1,1);
+        background: rgba(255,255,255,0);
+
+    }
+}
+@media(max-width:440px){
+    .text_speech{
+        width: 325px;
+        padding: 25px;
+    }
+}
