@@ -105,4 +105,9 @@ form label{
         width: 325px;
         padding: 25px;
     }
+    .talk.active::before{
+        inset: 3px 0 0 1px;
+        height: 45px;
+        width: 45px;
+    }
 }

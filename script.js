@@ -6,9 +6,11 @@ const SpeechRecognition =
 
 const recognition = new SpeechRecognition();
 
+recognition.continuous = true;
+recognition.interimResults = true;
+
 recognition.onstart = function () {
   talk.classList.add("active");
-  console.log("Voice is activated");
 };
 
 recognition.onresult = function (event) {
@@ -18,6 +20,7 @@ recognition.onresult = function (event) {
 
   talk.classList.remove("active");
   content.textContent = msg;
+  recognition.abort();
 };
 
 talk.addEventListener("click", () => {
@@ -82,5 +85,7 @@ function voices() {
     voiceList.insertAdjacentElement("beforeend", option);
   }
 }
+
+voices();
 
 synth.addEventListener("voiceschanged", voices);
