@@ -20,10 +20,10 @@ recognition.onresult = function (event) {
 
   talk.classList.remove("active");
   content.textContent = msg;
-  recognition.abort();
 };
 
 talk.addEventListener("click", () => {
+  recognition.abort();
   recognition.start();
 });
 
